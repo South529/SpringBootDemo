@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active:  prod  #当前活跃的环境
+    
+---        #yml中环境分隔线
+spring:
+  profiles: prod 
+
+#语法规则  1.注意层级关系  2.注意缩进 3.编辑注意空格
+#该环境为prod环境
+server:
+  port: 8080                #定义端口
+  servlet:
+    context-path: /         #定义路径 默认路径
+    
+#yml文件主要配置第三方配置 例如数据库 整合mybaits
+#2.为属性赋值
+node:
+  host: 10.0.0.l     #192.168.1.100
+  port: 7000         #7005
+
+--- #配置开发环境
+spring:
+  profiles: dev
+
+server:
+  port: 8090                #定义端口
+  servlet:
+    context-path: /jt         #定义路径 默认路径
+
+node:
+  host: 172.20.10.4
+  port: 7005
+  
+  
+  
+  
+  
+    
+  
